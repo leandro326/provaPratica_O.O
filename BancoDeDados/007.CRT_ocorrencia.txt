@@ -1,0 +1,26 @@
+-- Table: public.ocorrencia
+
+-- DROP TABLE public.ocorrencia;
+
+CREATE TABLE public.ocorrencia
+(
+    "Id_oc" integer NOT NULL DEFAULT nextval('"ocorrencia_Id_oc_seq"'::regclass),
+    nome_1 character(20) COLLATE pg_catalog."default",
+    nome_2 character(20) COLLATE pg_catalog."default",
+    matricula_1 character(15) COLLATE pg_catalog."default",
+    matricula_2 character(15) COLLATE pg_catalog."default",
+    placa_1 character(8) COLLATE pg_catalog."default",
+    placa_2 character(8) COLLATE pg_catalog."default",
+    tipo character(20) COLLATE pg_catalog."default",
+    ocorrencia character(4000) COLLATE pg_catalog."default",
+    data character(10) COLLATE pg_catalog."default",
+    setor character(10) COLLATE pg_catalog."default",
+    CONSTRAINT ocorrencia_pkey PRIMARY KEY ("Id_oc")
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.ocorrencia
+    OWNER to postgres;

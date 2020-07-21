@@ -1,0 +1,20 @@
+-- criando tabela Estacionamento
+-- Table: public.estacionamento
+
+-- DROP TABLE public.estacionamento;
+
+CREATE TABLE public.estacionamento
+(
+    est_id integer NOT NULL DEFAULT nextval('estacionamento_est_id_seq'::regclass),
+    est_nome character(20) COLLATE pg_catalog."default",
+    est_matricula character(10) COLLATE pg_catalog."default",
+    est_tipo character(15) COLLATE pg_catalog."default",
+    CONSTRAINT estacionamento_pkey PRIMARY KEY (est_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.estacionamento
+    OWNER to postgres;

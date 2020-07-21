@@ -1,0 +1,27 @@
+-- criando tabela aluno
+-- Table: public.aluno
+
+-- DROP TABLE public.aluno;
+
+CREATE TABLE public.aluno
+(
+    "Id_aluno" integer NOT NULL DEFAULT nextval('"aluno_Id_aluno_seq"'::regclass),
+    "matricula_Aluno" character(10) COLLATE pg_catalog."default",
+    "Nome_Aluno" character(20) COLLATE pg_catalog."default",
+    "Placa_Aluno" character(8) COLLATE pg_catalog."default",
+    veiculo character(9) COLLATE pg_catalog."default",
+    horario_entrada character(10) COLLATE pg_catalog."default",
+    horario_saida character(10) COLLATE pg_catalog."default",
+    data character(10) COLLATE pg_catalog."default",
+    setor character(10) COLLATE pg_catalog."default",
+    tipo character(13) COLLATE pg_catalog."default",
+    vaga_tipo character(10) COLLATE pg_catalog."default",
+    CONSTRAINT aluno_pkey PRIMARY KEY ("Id_aluno")
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.aluno
+    OWNER to postgres;

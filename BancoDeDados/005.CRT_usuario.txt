@@ -1,0 +1,20 @@
+-- criando tabela usuario
+-- Table: public.usuarios
+
+-- DROP TABLE public.usuarios;
+
+CREATE TABLE public.usuarios
+(
+    usu_id integer NOT NULL DEFAULT nextval('usuarios_usu_id_seq'::regclass),
+    usu_nome character varying(50) COLLATE pg_catalog."default",
+    usu_senha character varying(15) COLLATE pg_catalog."default",
+    usu_tipo character varying(30) COLLATE pg_catalog."default",
+    CONSTRAINT usuarios_pkey PRIMARY KEY (usu_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.usuarios
+    OWNER to postgres;
